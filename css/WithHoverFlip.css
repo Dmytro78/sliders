@@ -1,0 +1,92 @@
+body {
+  background-color: black;
+}
+
+.team {
+  max-width: 1024px;
+  /* padding: 50px 50px; */
+  margin: auto;
+}
+
+.team h1 {
+  font-size: 50px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  margin-bottom: 60px;
+  position: relative;
+  text-align: center;
+  color: orange;
+}
+
+.team h1::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 170px;
+  background-color: orange;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  backface-visibility: hidden;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.box {
+  transform: perspective(600px) rotateY(0deg);
+  transition: all 1s;
+}
+
+.info {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  color: orange;
+  text-align: center;
+
+  backface-visibility: hidden;
+  transform: perspective(600px) rotateY(180deg);
+  transition: all 1s;
+}
+
+.info h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.info h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.networks__img {
+  fill: black;
+  border-radius: 50%;
+}
+
+.networks__img:hover {
+  background-color: orange;
+}
+
+.card:hover .box {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover .info {
+  transform: perspective(600px) rotateY(0deg);
+}
